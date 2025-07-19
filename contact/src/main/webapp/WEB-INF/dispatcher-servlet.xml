@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+<!-- <bean id="/index" class="controller.FrontController"></bean>  -->
+<!-- <bean id="/" class="controller.MainController"></bean> -->
+
+
+<!-- injection upload bean/id not use -->
+<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix" value="/WEB-INF/views/"></property>
+	<property name="suffix" value=".jsp"></property>
+</bean>
+
+<bean id="driver" class="oracle.jdbc.driver.OracleDriver"></bean>
+
+<!-- datasource bean 생성 -->
+<bean id="ds" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
+	<constructor-arg ref="driver"/>
+	<constructor-arg value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	<constructor-arg value="night"/>
+	<constructor-arg value="night"/>
+</bean>
+
+<!-- @anotation을 찾기 위한 설정 -->
+<context:component-scan base-package="contact"></context:component-scan>
+
+
+</beans>
