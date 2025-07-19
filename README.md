@@ -2,6 +2,7 @@
 전체보기, 상세보기, 연락처 추가, 수정, 삭제 기능  
 
 URL
+
 [http://localhost:8888/contact/list](http://localhost:8888/contacts/list?requestPage=1)
 메인 1 페이지 
 
